@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B5BF41826CFC263ED0CA1637 /* Pods_Snapchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8520F291057A95FDD6A34E /* Pods_Snapchat.framework */; };
 		E216090D1FC3818E002E45FB /* ElegirUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216090C1FC3818E002E45FB /* ElegirUsuarioViewController.swift */; };
+		E21609141FC39467002E45FB /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21609131FC39467002E45FB /* Usuario.swift */; };
 		E2D8B6831FBA2E4900C1185D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8B6821FBA2E4900C1185D /* AppDelegate.swift */; };
 		E2D8B6851FBA2E4900C1185D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8B6841FBA2E4900C1185D /* ViewController.swift */; };
 		E2D8B6881FBA2E4900C1185D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D8B6861FBA2E4900C1185D /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		28398EDB3CAEABC1448388DF /* Pods-Snapchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapchat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snapchat/Pods-Snapchat.release.xcconfig"; sourceTree = "<group>"; };
 		CC8520F291057A95FDD6A34E /* Pods_Snapchat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapchat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E216090C1FC3818E002E45FB /* ElegirUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegirUsuarioViewController.swift; sourceTree = "<group>"; };
+		E21609131FC39467002E45FB /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		E2D8B67F1FBA2E4900C1185D /* Snapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D8B6821FBA2E4900C1185D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2D8B6841FBA2E4900C1185D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E21609111FC3940A002E45FB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E2D8B6841FBA2E4900C1185D /* ViewController.swift */,
+				E2D8B6971FBA4FE300C1185D /* SnapsViewController.swift */,
+				E2D8B6991FBA52BB00C1185D /* ImagenViewController.swift */,
+				E216090C1FC3818E002E45FB /* ElegirUsuarioViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E21609121FC39446002E45FB /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				E21609131FC39467002E45FB /* Usuario.swift */,
+			);
+			path = Modelos;
+			sourceTree = "<group>";
+		};
 		E2D8B6761FBA2E4900C1185D = {
 			isa = PBXGroup;
 			children = (
@@ -87,17 +108,15 @@
 		E2D8B6811FBA2E4900C1185D /* Snapchat */ = {
 			isa = PBXGroup;
 			children = (
+				E21609121FC39446002E45FB /* Modelos */,
+				E21609111FC3940A002E45FB /* ViewControllers */,
 				E2D8B6961FBA4F2200C1185D /* Snapchat.entitlements */,
 				E2D8B6941FBA307F00C1185D /* GoogleService-Info.plist */,
 				E2D8B6821FBA2E4900C1185D /* AppDelegate.swift */,
-				E2D8B6841FBA2E4900C1185D /* ViewController.swift */,
 				E2D8B6861FBA2E4900C1185D /* Main.storyboard */,
 				E2D8B6891FBA2E4900C1185D /* Assets.xcassets */,
 				E2D8B68B1FBA2E4900C1185D /* LaunchScreen.storyboard */,
 				E2D8B68E1FBA2E4900C1185D /* Info.plist */,
-				E2D8B6971FBA4FE300C1185D /* SnapsViewController.swift */,
-				E2D8B6991FBA52BB00C1185D /* ImagenViewController.swift */,
-				E216090C1FC3818E002E45FB /* ElegirUsuarioViewController.swift */,
 			);
 			path = Snapchat;
 			sourceTree = "<group>";
@@ -245,6 +264,7 @@
 			files = (
 				E2D8B6851FBA2E4900C1185D /* ViewController.swift in Sources */,
 				E2D8B69A1FBA52BB00C1185D /* ImagenViewController.swift in Sources */,
+				E21609141FC39467002E45FB /* Usuario.swift in Sources */,
 				E2D8B6831FBA2E4900C1185D /* AppDelegate.swift in Sources */,
 				E2D8B6981FBA4FE300C1185D /* SnapsViewController.swift in Sources */,
 				E216090D1FC3818E002E45FB /* ElegirUsuarioViewController.swift in Sources */,
