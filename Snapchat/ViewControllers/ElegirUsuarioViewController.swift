@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import FirebaseDatabase
-import FirebaseAuth
+import Firebase
 
 class ElegirUsuarioViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -23,7 +22,7 @@ class ElegirUsuarioViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        Database.database().reference().child("usuarios").observe(DataEventType.childAdded, with: {(snapshot) in print(snapshot)
+        Database.database().reference().child("usuarios").observe(DataEventType.childAdded, with: {(snapshot) in
             let usuario = Usuario()
             usuario.email = (snapshot.value as! NSDictionary)["email"] as! String
             usuario.uid = snapshot.key
@@ -46,7 +45,7 @@ class ElegirUsuarioViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let usuario = usuarios[indexPath.row]
         let snap = ["from":Auth.auth().currentUser!.email!, "descripcion":descrip, "imagenURL":imagenURL, "imagenID": imagenID]
-        Database.database().reference().child(usuario.uid).child("snaps").childByAutoId().setValue(snap)
+        Database.database().reference().child("usuarios").child(usuario.uid).child("snaps").childByAutoId().setValue(snap)
         navigationController?.popToRootViewController(animated: true)
     }
 

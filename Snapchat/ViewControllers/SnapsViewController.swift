@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import FirebaseDatabase
-import FirebaseAuth
+import Firebase
 
 class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
