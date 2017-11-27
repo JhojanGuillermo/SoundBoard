@@ -34,7 +34,7 @@ class ImagenViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
 
     @IBAction func camaraTapped(_ sender: Any) {
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .savedPhotosAlbum
         imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
     }

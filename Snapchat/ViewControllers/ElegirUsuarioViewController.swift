@@ -25,7 +25,7 @@ class ElegirUsuarioViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.dataSource = self
         Database.database().reference().child("usuarios").observe(DataEventType.childAdded, with: {(snapshot) in print(snapshot)
             let usuario = Usuario()
-            usuario.email = (snapshot.value as! NSDictionary)["'email'"] as! String
+            usuario.email = (snapshot.value as! NSDictionary)["email"] as! String
             usuario.uid = snapshot.key
             self.usuarios.append(usuario)
             self.tableView.reloadData()
@@ -45,7 +45,7 @@ class ElegirUsuarioViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let usuario = usuarios[indexPath.row]
-        let snap = ["from":Auth.auth()!.currentUser!.email!, "descripcion":descrip, "imagenURL":imagenURL, "imagenID": imagenID]
+        let snap = ["from":Auth.auth().currentUser!.email!, "descripcion":descrip, "imagenURL":imagenURL, "imagenID": imagenID]
         Database.database().reference().child(usuario.uid).child("snaps").childByAutoId().setValue(snap)
         navigationController?.popToRootViewController(animated: true)
     }

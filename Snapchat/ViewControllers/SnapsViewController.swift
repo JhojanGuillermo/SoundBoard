@@ -13,13 +13,15 @@ import FirebaseAuth
 class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    var snaps : [Snap] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
         
-        Database.database().child("usuarios").child(Auth.auth()!.currentUser!.uid).child("snaps").observe(DataEventType.childAdded, with: {(snapshot) in
+        Database.database().reference().child("usuarios").child(Auth.auth().currentUser!.uid).child("snaps").observe(DataEventType.childAdded, with: {(snapshot) in
             let snap = Snap()
             
             snap.imagenURL = (snapshot.value as! NSDictionary)["imagenURL"] as! String
@@ -31,7 +33,7 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.tableView.reloadData()
         })
         
-        Database.database().reference().child("usuarios").child(Auth.auth()!.currentUser!.uid).child("snaps").observe(DataEventType.childRemoved, with: {(snapshot) in
+        Database.database().reference().child("usuarios").child(Auth.auth().currentUser!.uid).child("snaps").observe(DataEventType.childRemoved, with: {(snapshot) in
             var iterador = 0
             for snap in self.snaps{
                 if snap.id == snapshot.key{
